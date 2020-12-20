@@ -31,7 +31,8 @@ namespace Random.API
                 options.AddDefaultPolicy(policy =>
                     policy.AllowAnyHeader()
                           .AllowAnyMethod()
-                          .AllowCredentials());
+                          .AllowCredentials()
+                          .AllowAnyOrigin());
             });
         }
 
