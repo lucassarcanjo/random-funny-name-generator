@@ -29,10 +29,9 @@ namespace Random.API
             services.AddCors(options => 
             {
                 options.AddDefaultPolicy(policy =>
-                    policy.AllowAnyHeader()
+                    policy.AllowAnyOrigin()
                           .AllowAnyMethod()
-                          .AllowCredentials()
-                          .AllowAnyOrigin());
+                          .AllowAnyHeader());
             });
         }
 
