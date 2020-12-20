@@ -25,6 +25,14 @@ namespace Random.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Random Funny Name Generator", Version = "v1" });
             });
+
+            services.AddCors(options => 
+            {
+                options.AddDefaultPolicy(policy =>
+                    policy.AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +51,8 @@ namespace Random.API
             });
 
             app.UseHttpsRedirection();
+
+            app.UseCors();
 
             app.UseRouting();
 
